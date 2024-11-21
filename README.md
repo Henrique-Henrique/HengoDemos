@@ -1,6 +1,8 @@
 > [!WARNING]
 > 🚧 Hengo is still under development! Expect bugs and incomplete features as we continue to improve it.
 
+**Minimum Godot Version Required:** 4.3
+
 # Hengo Demo Projects
 
 Each folder containing a `project.godot` file is a demo project meant to
