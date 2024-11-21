@@ -12,8 +12,6 @@ func set_states(_states: Dictionary) -> void:
 	states = _states
 
 func change_state(_state: String) -> void:
-	print('S -> ', _state)
-	
 	var state = states[_state]
 	current_state = state
 	state.call('enter')

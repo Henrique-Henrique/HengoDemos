@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nne5eo4pjlbc"
-path="res://.godot/imported/texture_09.png-8d82f959b7c644e04eda0c1dbb4e3443.ctex"
+uid="uid://cptsheh4la6cs"
+path.s3tc="res://.godot/imported/crosshair151.png-b7d3a241c05983f22451e3bf7b898a88.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/PNG/Orange/texture_09.png"
-dest_files=["res://.godot/imported/texture_09.png-8d82f959b7c644e04eda0c1dbb4e3443.ctex"]
+source_file="res://assets/PNG/Crosshair/crosshair151.png"
+dest_files=["res://.godot/imported/crosshair151.png-b7d3a241c05983f22451e3bf7b898a88.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
