@@ -63,7 +63,7 @@ use_collision = true
 size = Vector3(100, 0.202, 100)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("head", "camera", "hand", "ray")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0922, 5.10929, -3.54434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05143, 5.10929, -3.54434)
 script = ExtResource("3_6nrua")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
@@ -71,13 +71,13 @@ hand = NodePath("Head/Camera3D/Hand")
 ray = NodePath("Head/Camera3D/Ray")
 speed = 5
 sensibility = 0.005
-jump_velocity = 9.0
+jump_velocity = 4.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ychjv")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.767639, 0)
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 0, 0.767639, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 fov = 103.0
@@ -149,7 +149,7 @@ light_energy = 16.0
 omni_range = 35.7016
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15729, 2.21243, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1261, 2.21243, -2.46828)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -159,7 +159,7 @@ material = SubResource("StandardMaterial3D_qbays")
 shape = SubResource("BoxShape3D_vhdun")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.717677, 0.696376, 0, -0.696376, 0.717677, 4.47357, 3.946, -0.740135)
+transform = Transform3D(1, 0, 0, 0, 0.717677, 0.696376, 0, -0.696376, 0.717677, 25.4424, 6.25327, -3.20842)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D2"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -169,61 +169,11 @@ material = SubResource("StandardMaterial3D_qbays")
 shape = SubResource("BoxShape3D_vhdun")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.527104, 0.849801, 0, -0.849801, 0.527104, 4.47357, 3.946, -2.69695)
+transform = Transform3D(1, 0, 0, 0, 0.527104, 0.849801, 0, -0.849801, 0.527104, 25.4424, 3.946, -5.16523)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D3"]
 size = Vector3(1.5, 1.5, 1.5)
 material = SubResource("StandardMaterial3D_qbays")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
-shape = SubResource("BoxShape3D_vhdun")
-
-[node name="RigidBody3D4" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2483, 2.21243, 0)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D4"]
-size = Vector3(1.5, 1.5, 1.5)
-material = SubResource("StandardMaterial3D_qbays")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
-shape = SubResource("BoxShape3D_vhdun")
-
-[node name="RigidBody3D5" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.717677, 0.696376, 0, -0.696376, 0.717677, 16.5645, 3.946, -0.740135)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D5"]
-size = Vector3(1.5, 1.5, 1.5)
-material = SubResource("StandardMaterial3D_qbays")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D5"]
-shape = SubResource("BoxShape3D_vhdun")
-
-[node name="RigidBody3D7" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4251, 4.06791, 2.37046)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D7"]
-size = Vector3(1.5, 1.5, 1.5)
-material = SubResource("StandardMaterial3D_qbays")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D7"]
-shape = SubResource("BoxShape3D_vhdun")
-
-[node name="RigidBody3D8" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.717677, 0.696376, 0, -0.696376, 0.717677, 15.7413, 5.80148, 1.63032)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D8"]
-size = Vector3(1.5, 1.5, 1.5)
-material = SubResource("StandardMaterial3D_qbays")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D8"]
-shape = SubResource("BoxShape3D_vhdun")
-
-[node name="RigidBody3D9" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.527104, 0.849801, 0, -0.849801, 0.527104, 15.7413, 5.80148, -0.326492)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="RigidBody3D9"]
-size = Vector3(1.5, 1.5, 1.5)
-material = SubResource("StandardMaterial3D_qbays")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D9"]
 shape = SubResource("BoxShape3D_vhdun")
