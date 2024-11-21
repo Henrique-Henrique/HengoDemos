@@ -76,7 +76,7 @@ Run -> Hold Shift
 Jump -> Spacebar
 Grab -> Hold Left Mouse Button
 Shoot -> Press Right Mouse Button
-
+Capture Mouse -> F9
 "
 
 [node name="Label2" type="Label" parent="MarginContainer/Control"]
