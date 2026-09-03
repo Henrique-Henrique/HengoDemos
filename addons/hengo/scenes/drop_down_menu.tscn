@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd8qatv1gtb"]
+
+[ext_resource type="Script" uid="uid://cj0u7w1pe6ind" path="res://addons/hengo/scripts/drop_down_menu.gd" id="1_uesla"]
+[ext_resource type="StyleBox" uid="uid://b0ss25v1amkw5" path="res://addons/hengo/resources/style_box/cnode.tres" id="1_w7cid"]
+
+[node name="DropDownMenu" type="PanelContainer"]
+offset_right = 253.0
+offset_bottom = 318.0
+theme_override_styles/panel = ExtResource("1_w7cid")
+script = ExtResource("1_uesla")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SearchBar" type="LineEdit" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="List" type="ItemList" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+allow_search = false

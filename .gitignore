@@ -1,0 +1,36 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# only the root addons is versioned, sync-addons.sh copies it into the demos
+**/addons/
+!/addons/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Exported builds and export presets (may carry keystore paths and passwords)
+export_presets.cfg
+export.cfg
+*.exe
+*.pck
+*.zip
+*.apk
+*.aab
+
+# Mono / C#
+.mono/
+data_*/
+mono_crash.*.json
+*.csproj.old
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.tmp
+
+# packaging output of the release workflow
+/dist/

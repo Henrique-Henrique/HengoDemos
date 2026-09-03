@@ -17,6 +17,21 @@ To import all demos at once in the project manager:
 
 - Clone this repository or download a ZIP archive.
   - If you've downloaded a ZIP archive, extract it somewhere.
+- Run `./sync-addons.sh` from the repository root, so every demo gets the addon.
 - Open the Godot project manager and click the **Scan** button on the right.
 - Choose the path to the folder containing all demos.
 - All demos should now appear in the project manager.
+
+## The Hengo addon
+
+Only the `addons/` folder at the repository root is versioned. Each demo keeps its
+own copy of the addon, but that copy is ignored by git and is not in a fresh clone.
+
+`sync-addons.sh` copies the root `addons/` into every folder that has a
+`project.godot`, replacing the copy that folder had. Run it after cloning, and
+again whenever the root `addons/` is updated:
+
+```sh
+./sync-addons.sh --dry-run   # lists what it would replace
+./sync-addons.sh             # does it
+```
