@@ -34,3 +34,8 @@ desktop.ini
 
 # packaging output of the release workflow
 /dist/
+
+!.github/
+temp/
+.*/
+.*

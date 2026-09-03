@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://hengo/scripts/rg_hit_fx.gd" id="1"]
+
+[sub_resource type="SphereMesh" id="puff"]
+radius = 0.12
+height = 0.24
+radial_segments = 5
+rings = 3
+
+[sub_resource type="StandardMaterial3D" id="puff_mat"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.93, 0.92, 0.88, 0.55)
+
+[node name="Dust" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Puff" type="CPUParticles3D" parent="."]
+emitting = true
+amount = 14
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.85
+mesh = SubResource("puff")
+material_override = SubResource("puff_mat")
+direction = Vector3(0, 1, 0)
+spread = 60.0
+gravity = Vector3(0, 0.7, 0)
+initial_velocity_min = 0.4
+initial_velocity_max = 1.4
+damping_min = 1.6
+damping_max = 2.6
+scale_amount_min = 0.8
+scale_amount_max = 2.2
+scale_amount_curve = null
