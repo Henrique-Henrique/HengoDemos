@@ -681,6 +681,7 @@ mesh = SubResource("guard_mesh")
 path_desired_distance = 0.6
 
 [node name="Targets" type="Node3D" parent="." unique_id=416926565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6876292, 5.105797)
 
 [node name="Target1" type="RigidBody3D" parent="Targets" unique_id=1676702735 groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.2, -12)
