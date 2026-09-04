@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://c714cqsys4rsq"]
+
+[ext_resource type="Script" uid="uid://cnfv5ehb7ikwh" path="res://addons/hengo/scripts/utils/dashboard.gd" id="1_jlpx7"]
+[ext_resource type="Texture2D" uid="uid://b253cikspw8hb" path="res://addons/hengo/assets/new_icons/file-plus.svg" id="1_v3ptv"]
+[ext_resource type="Texture2D" uid="uid://skoevmk0r0ms" path="res://addons/hengo/assets/new_icons/book-open-text.svg" id="2_jlpx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dash_root"]
+
+[node name="Dashboard" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dash_root")
+script = ExtResource("1_jlpx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="QuickActionsRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="NewScript" type="Button" parent="MarginContainer/VBoxContainer/QuickActionsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 14
+clip_text = true
+text = "New Collection"
+icon = ExtResource("1_v3ptv")
+
+[node name="DocumentationBt" type="Button" parent="MarginContainer/VBoxContainer/QuickActionsRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/icon_max_width = 14
+tooltip_text = "Open the Hengo docs in the browser"
+mouse_default_cursor_shape = 2
+clip_text = true
+text = "Docs"
+icon = ExtResource("2_jlpx7")
+
+[node name="Search" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Search collections..."
+
+[node name="ScriptListScroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ScriptList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScriptListScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2

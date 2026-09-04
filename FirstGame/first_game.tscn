@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnpvnhd72j0to"]
+
+[ext_resource type="Script" uid="uid://dpt5vyvihu0af" path="res://hengo/scripts/first_game.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b3mlsqehv0i70" path="res://icon.svg" id="2_icon"]
+
+[node name="Main" type="Node2D" unique_id=917372722]
+
+[node name="Runner" type="Sprite2D" parent="." unique_id=2063597848]
+position = Vector2(576, 324)
+texture = ExtResource("2_icon")
+script = ExtResource("1_script")

@@ -1,0 +1,91 @@
+name: Release demos
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag. Leave empty to use demos-<date>.'
+        required: false
+        default: ''
+      draft:
+        description: 'Create the release as a draft'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Put the root addons into every demo
+        run: bash sync-addons.sh
+
+      - name: Zip each demo
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          found=0
+
+          for godot_file in */project.godot; do
+            [ -e "$godot_file" ] || continue
+            demo="$(dirname "$godot_file")"
+
+            zip -r -q "dist/${demo}.zip" "$demo" -x "${demo}/.godot/*"
+
+            # a demo without the addon opens to a broken plugin, so fail here instead
+            if ! unzip -l "dist/${demo}.zip" | grep -q "${demo}/addons/hengo/plugin.cfg"; then
+              echo "error: ${demo}.zip has no addons/hengo" >&2
+              exit 1
+            fi
+
+            found=1
+          done
+
+          if [ "$found" -eq 0 ]; then
+            echo "error: no folder with a project.godot to package" >&2
+            exit 1
+          fi
+
+          ls -lh dist
+
+      - name: Upload the zips as build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: demos
+          path: dist/*.zip
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+          DRAFT: ${{ inputs.draft }}
+        run: |
+          set -euo pipefail
+          tag="$TAG"
+
+          if [ -z "$tag" ]; then
+            tag="demos-$(date -u +'%Y%m%d-%H%M')"
+          fi
+
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            args=(--title "$tag" --notes "Demo projects packaged from ${GITHUB_SHA:0:7}.")
+
+            if [ "$DRAFT" = 'true' ]; then
+              args+=(--draft)
+            fi
+
+            gh release create "$tag" --target "$GITHUB_SHA" "${args[@]}"
+          fi
+
+          gh release upload "$tag" dist/*.zip --clobber
+
+          {
+            echo "### Release \`$tag\`"
+            echo
+            gh release view "$tag" --json url --jq .url
+          } >> "$GITHUB_STEP_SUMMARY"

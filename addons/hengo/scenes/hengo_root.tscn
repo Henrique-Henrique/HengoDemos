@@ -1,0 +1,673 @@
+[gd_scene format=3 uid="uid://clbto1cshblaw"]
+
+[ext_resource type="Script" uid="uid://isaus02qqnxg" path="res://addons/hengo/scripts/hengo_root.gd" id="2_velgh"]
+[ext_resource type="Script" uid="uid://dndakpv2e001o" path="res://addons/hengo/scripts/utils/thread_helper.gd" id="3_1gx8m"]
+[ext_resource type="Script" uid="uid://txuf5gnky3em" path="res://addons/hengo/scripts/save_load/map_dependencies.gd" id="6_0js6d"]
+[ext_resource type="Script" uid="uid://bojhvy7et13dd" path="res://addons/hengo/scripts/save_load/loader.gd" id="7_rg66s"]
+[ext_resource type="Shader" uid="uid://cq7sij4xolke1" path="res://addons/hengo/assets/shaders/grid.gdshader" id="9_5sxro"]
+[ext_resource type="Script" uid="uid://bwvlnkdrjks50" path="res://addons/hengo/scripts/code_generation.gd" id="9_dkwui"]
+[ext_resource type="Script" uid="uid://exlq4wcwactd" path="res://addons/hengo/scripts/enums.gd" id="10_q27l4"]
+[ext_resource type="Script" uid="uid://btva62mk8a3sy" path="res://addons/hengo/scripts/compile.gd" id="11_35y2j"]
+[ext_resource type="Script" uid="uid://itdfd6vqm34v" path="res://addons/hengo/scripts/global.gd" id="11_3680e"]
+[ext_resource type="Theme" uid="uid://b8wwxpbbrp2rl" path="res://addons/hengo/references/theme/hengo.tres" id="12_5c7h0"]
+[ext_resource type="Script" uid="uid://gl7h3vk7bcts" path="res://addons/hengo/scripts/utils/api/api.gd" id="13_5c7h0"]
+[ext_resource type="Texture2D" uid="uid://bkxx3iubq3qun" path="res://addons/hengo/assets/images/grid.png" id="17_lxtpw"]
+[ext_resource type="Texture2D" uid="uid://byhp341nd8v2j" path="res://addons/hengo/assets/new_icons/cog.svg" id="18_fdf88"]
+[ext_resource type="Script" uid="uid://boxasjxccdkk1" path="res://addons/hengo/scripts/utils/side_panel_tab_container.gd" id="18_hg3xi"]
+[ext_resource type="Texture2D" uid="uid://c6p6p77i7bfc4" path="res://addons/hengo/assets/icons/settings.svg" id="21_5c7h0"]
+[ext_resource type="Texture2D" uid="uid://fnc82jlho3ft" path="res://addons/hengo/assets/icons/menu/text.svg" id="22_33cyo"]
+[ext_resource type="PackedScene" uid="uid://c4qu2ti8efl61" path="res://addons/hengo/scenes/side_bar.tscn" id="22_x5h56"]
+[ext_resource type="FontFile" uid="uid://bidhodani4k31" path="res://addons/hengo/assets/fonts/bold.ttf" id="23_tlngq"]
+[ext_resource type="PackedScene" uid="uid://xg0nsq20dlya" path="res://addons/hengo/scenes/utils/tooltip.tscn" id="23_x5h56"]
+[ext_resource type="PackedScene" path="res://addons/hengo/scenes/flow_viewer.tscn" id="60_flowvw"]
+[ext_resource type="Script" uid="uid://doifdm1hiujqd" path="res://addons/hengo/scripts/utils/signal_bus.gd" id="27_ji2ve"]
+[ext_resource type="Texture2D" uid="uid://c6f7xyoyth505" path="res://addons/hengo/assets/new_icons/user-round-cog.svg" id="32_h1p8r"]
+[ext_resource type="Texture2D" uid="uid://cdltixrky1fo7" path="res://addons/hengo/assets/new_icons/info.svg" id="38_onj4m"]
+[ext_resource type="Texture2D" uid="uid://upmmxrxll8y4" path="res://addons/hengo/assets/new_icons/mouse-pointer-click.svg" id="39_174hx"]
+[ext_resource type="Texture2D" uid="uid://e6883ccr0kd4" path="res://addons/hengo/assets/new_icons/circle-check.svg" id="39_vlu6e"]
+[ext_resource type="Texture2D" uid="uid://d1gvhd43e01be" path="res://addons/hengo/assets/new_icons/layout-dashboard.svg" id="40_174hx"]
+[ext_resource type="Texture2D" uid="uid://cih44fa46xubd" path="res://addons/hengo/assets/new_icons/shield-alert.svg" id="40_aqok7"]
+[ext_resource type="PackedScene" uid="uid://c714cqsys4rsq" path="res://addons/hengo/scenes/dashboard.tscn" id="44_33cyo"]
+[ext_resource type="Script" uid="uid://cqqhq6il7n5su" path="res://addons/hengo/scripts/utils/toast/toast_container.gd" id="47_h1p8r"]
+[ext_resource type="Script" uid="uid://yk1vflpkmh60" path="res://addons/hengo/scripts/general_popup.gd" id="48_popup"]
+[ext_resource type="Texture2D" uid="uid://cguqtcpwfbkqk" path="res://addons/hengo/assets/new_icons/chevrons-right-left.svg" id="51_sidebar"]
+[ext_resource type="Texture2D" uid="uid://0l4bcawtp371" path="res://addons/hengo/assets/new_icons/refresh-cw.svg" id="53_refresh"]
+[ext_resource type="Texture2D" uid="uid://cuxdwx2mic0yt" path="res://addons/hengo/assets/new_icons/focus.svg" id="55_focus"]
+[ext_resource type="Script" path="res://addons/hengo/scripts/utils/tabs.gd" id="tabs_inst"]
+[ext_resource type="PackedScene" path="res://addons/hengo/scenes/utils/saving_pill.tscn" id="savpill_inst"]
+[ext_resource type="PackedScene" path="res://addons/hengo/scenes/utils/route_bar.tscn" id="routebar_inst"]
+[ext_resource type="PackedScene" path="res://addons/hengo/scenes/debug_nodes_panel.tscn" id="dbgpanel_inst"]
+[ext_resource type="Texture2D" path="res://addons/hengo/assets/new_icons/bug.svg" id="57_bug"]
+[ext_resource type="Texture2D" path="res://addons/hengo/assets/new_icons/command.svg" id="54_shortcuts"]
+[ext_resource type="Texture2D" path="res://addons/hengo/assets/new_icons/columns-3.svg" id="55_wrapon"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_sidetabs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3680e"]
+bg_color = Color(0.082, 0.082, 0.105, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52efy"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.43137255, 0.5647059, 0.90588236, 0.2)
+border_color = Color(0.4745098, 0.4745098, 0.4745098, 0.44313726)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_onj4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlu6e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1p8r"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.16862746)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3680e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lxtpw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gx8m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72kn2"]
+bg_color = Color(0.024, 0.024, 0.039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onj4m"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8ipe"]
+shader = ExtResource("9_5sxro")
+shader_parameter/screen_size = Vector2(3438, 1948)
+shader_parameter/offset = Vector2(403.73172, -27.007286)
+shader_parameter/zoom_factor = 0.69827753
+shader_parameter/alpha = 0.2
+shader_parameter/text = ExtResource("17_lxtpw")
+shader_parameter/text_size = 400.0
+
+[sub_resource type="Gradient" id="Gradient_rg8iy"]
+colors = PackedColorArray(0.74509805, 0.74509805, 0.74509805, 1, 1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ehx0"]
+bg_color = Color(1, 1, 1, 0.0862745)
+
+[node name="HengoRoot" type="Control" unique_id=706706338]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("2_velgh")
+
+[node name="AutoLoads" type="Node" parent="." unique_id=327266070]
+unique_name_in_owner = true
+
+[node name="ThreadHelper" type="Node" parent="AutoLoads" unique_id=798517556]
+unique_name_in_owner = true
+script = ExtResource("3_1gx8m")
+
+[node name="MapDependencies" type="Node" parent="AutoLoads" unique_id=1174672169]
+unique_name_in_owner = true
+script = ExtResource("6_0js6d")
+metadata/_custom_type_script = "uid://txuf5gnky3em"
+
+[node name="Loader" type="Node" parent="AutoLoads" unique_id=809164026]
+unique_name_in_owner = true
+script = ExtResource("7_rg66s")
+metadata/_custom_type_script = "uid://bojhvy7et13dd"
+
+[node name="CodeGeneration" type="Node" parent="AutoLoads" unique_id=1979949874]
+unique_name_in_owner = true
+script = ExtResource("9_dkwui")
+metadata/_custom_type_script = "uid://bwvlnkdrjks50"
+
+[node name="Enums" type="Node" parent="AutoLoads" unique_id=799741258]
+unique_name_in_owner = true
+script = ExtResource("10_q27l4")
+
+[node name="Global" type="Node" parent="AutoLoads" unique_id=1661148837]
+unique_name_in_owner = true
+script = ExtResource("11_3680e")
+
+[node name="SignalBus" type="Node" parent="AutoLoads" unique_id=1061698614]
+unique_name_in_owner = true
+script = ExtResource("27_ji2ve")
+
+[node name="API" type="Node" parent="AutoLoads" unique_id=817541594]
+unique_name_in_owner = true
+script = ExtResource("13_5c7h0")
+
+[node name="GeneralPopup" type="Node" parent="AutoLoads" unique_id=324736783]
+unique_name_in_owner = true
+script = ExtResource("48_popup")
+
+[node name="Content" type="Control" parent="." unique_id=1559135038]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UIBase" type="Control" parent="Content" unique_id=330977857]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_5c7h0")
+
+[node name="BackgroundPanel" type="Panel" parent="Content/UIBase" unique_id=1116617169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3680e")
+
+[node name="MainLayout" type="VBoxContainer" parent="Content/UIBase" unique_id=2000000001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="CenterRow" type="HBoxContainer" parent="Content/UIBase/MainLayout" unique_id=2000000050]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="ScriptTabsPanel" type="PanelContainer" parent="Content/UIBase/MainLayout/CenterRow" unique_id=2000000051]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+theme_type_variation = &"ScriptTabsPanel"
+
+[node name="ScriptTabsVBox" type="VBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel" unique_id=2000000052]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ScriptTabsHeader" type="HBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox" unique_id=2000000053]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ToggleScriptTabsBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox/ScriptTabsHeader" unique_id=2000000054]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 28)
+layout_mode = 2
+tooltip_text = "Expand script tabs"
+icon = ExtResource("51_sidebar")
+flat = true
+
+[node name="ScriptTabsTitle" type="Label" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox/ScriptTabsHeader" unique_id=2000000055]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Scripts"
+
+[node name="NewScriptTabBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox/ScriptTabsHeader" unique_id=2000000056]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+tooltip_text = "New script in this collection"
+text = "+"
+flat = true
+
+[node name="ScriptTabListScroll" type="ScrollContainer" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox" unique_id=2000000057]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ScriptTabList" type="VBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ScriptTabsPanel/ScriptTabsVBox/ScriptTabListScroll" unique_id=2000000058]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+script = ExtResource("tabs_inst")
+
+[node name="ContentArea" type="HSplitContainer" parent="Content/UIBase/MainLayout/CenterRow" unique_id=1223978220]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="SideBarMargin" type="MarginContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea" unique_id=116167880]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+mouse_filter = 0
+
+[node name="SidePanel" type="PanelContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin" unique_id=1340978270]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3680e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel" unique_id=251941409]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="SidebarHeader" type="BoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer" unique_id=2000000019]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="SidebarIconStrip" type="BoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader" unique_id=2000000022]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="DashboardIconBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader/SidebarIconStrip" unique_id=2000000034]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 30)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SidebarTabButton"
+tooltip_text = "Dashboard"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sidetabs")
+icon = ExtResource("40_174hx")
+icon_alignment = 1
+
+[node name="PropsIconBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader/SidebarIconStrip" unique_id=2000000023]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 30)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SidebarTabButton"
+tooltip_text = "Props"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sidetabs")
+icon = ExtResource("21_5c7h0")
+icon_alignment = 1
+
+[node name="CodeIconBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader/SidebarIconStrip" unique_id=2000000024]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 30)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SidebarTabButton"
+tooltip_text = "Code Preview"
+disabled = true
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sidetabs")
+icon = ExtResource("22_33cyo")
+icon_alignment = 1
+
+[node name="DebugIconBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader/SidebarIconStrip" unique_id=2000000063]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(32, 30)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SidebarTabButton"
+tooltip_text = "Debug"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sidetabs")
+icon = ExtResource("57_bug")
+icon_alignment = 1
+
+[node name="IconStripSpacer" type="Control" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader/SidebarIconStrip" unique_id=2000000025]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CollapseToggleBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarHeader" unique_id=2000000021]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 30)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SidebarTabButton"
+tooltip_text = "Collapse sidebar"
+icon = ExtResource("51_sidebar")
+icon_alignment = 1
+
+[node name="SidebarTabsSep" type="HSeparator" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer" unique_id=2000000064]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SidebarTabContainer" type="TabContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer" unique_id=908628429]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"TabContainerInner"
+current_tab = 1
+tabs_visible = false
+tab_0/title = "Dashboard"
+tab_0/icon = ExtResource("40_174hx")
+tab_1/title = "Props"
+tab_1/icon = ExtResource("21_5c7h0")
+tab_2/title = "Code Preview"
+tab_2/icon = ExtResource("22_33cyo")
+script = ExtResource("18_hg3xi")
+
+[node name="DashBoard" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarTabContainer" unique_id=179649431 instance=ExtResource("44_33cyo")]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Dashboard"
+
+[node name="SideBar" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarTabContainer" unique_id=1587614674 instance=ExtResource("22_x5h56")]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+visible = false
+metadata/_tab_index = 1
+metadata/_tab_name = "Props"
+
+[node name="DebugNodesPanel" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/SideBarMargin/SidePanel/VBoxContainer/SidebarTabContainer" unique_id=2000000060 instance=ExtResource("dbgpanel_inst")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+metadata/_tab_name = "Debug"
+
+[node name="CanvasVBox" type="VBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea" unique_id=1462542696]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="CanvasTopBar" type="PanelContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox" unique_id=2000000027]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CanvasTopBarPanel"
+
+[node name="CanvasTopBarMargin" type="MarginContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar" unique_id=2000000028]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="CanvasTopBarHBox" type="HBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin" unique_id=2000000029]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TopBarSpacer" type="Control" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=2000000031]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassName" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=1357072692]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_52efy")
+
+[node name="Config" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=712136240]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("32_h1p8r")
+flat = true
+
+[node name="VSeparator" type="VSeparator" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=2000000032]
+layout_mode = 2
+
+[node name="ActionsBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=1964371426]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Actions"
+icon = ExtResource("39_174hx")
+
+[node name="ShortcutsBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=2000000091]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "Keyboard shortcuts"
+icon = ExtResource("54_shortcuts")
+flat = true
+
+[node name="RefreshGraphBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=2000000062]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "Rebuild the flow layout"
+icon = ExtResource("53_refresh")
+flat = true
+
+[node name="FlowWrapBt" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=2000000110]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+tooltip_text = "Flow layout"
+icon = ExtResource("55_wrapon")
+flat = true
+
+[node name="CompileContainer" type="HBoxContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox" unique_id=1799733899]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("11_35y2j")
+
+[node name="Compile" type="Button" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTopBar/CanvasTopBarMargin/CanvasTopBarHBox/CompileContainer" unique_id=760264391]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PrimaryButton"
+theme_override_fonts/font = ExtResource("23_tlngq")
+text = "Compile All"
+icon = ExtResource("18_fdf88")
+
+[node name="CanvasTabs" type="TabContainer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox" unique_id=2000000008]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"CanvasTabContainer"
+tabs_visible = false
+current_tab = 1
+tab_0/title = "Canvas"
+tab_1/title = "Flow"
+
+[node name="StatusBar" type="PanelContainer" parent="Content/UIBase/MainLayout" unique_id=2000000010]
+layout_mode = 2
+theme_type_variation = &"StatusBarPanel"
+
+[node name="StatusHBox" type="HBoxContainer" parent="Content/UIBase/MainLayout/StatusBar" unique_id=2000000011]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BrandLabel" type="Label" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000120]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 0.45)
+theme_override_fonts/font = ExtResource("23_tlngq")
+theme_override_font_sizes/font_size = 13
+text = "Hengo Script"
+
+[node name="VSeparatorBrand" type="VSeparator" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000121]
+layout_mode = 2
+
+[node name="ScriptInfo" type="HBoxContainer" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000035]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ScriptIcon" type="TextureRect" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/ScriptInfo" unique_id=2000000036]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScriptNameLabel" type="Label" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/ScriptInfo" unique_id=2000000012]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No script loaded"
+
+[node name="RouteBar" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000130 instance=ExtResource("routebar_inst")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VSeparatorStatus" type="VSeparator" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000013]
+layout_mode = 2
+
+[node name="ErrorInfo" type="HBoxContainer" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000037]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ErrorIcon" type="TextureRect" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/ErrorInfo" unique_id=2000000038]
+unique_name_in_owner = true
+modulate = Color(0.13, 0.77, 0.37, 1)
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("39_vlu6e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ErrorStatusLabel" type="Label" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/ErrorInfo" unique_id=2000000014]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No errors"
+
+[node name="StatusSpacer" type="Control" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000015]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SavingPill" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2147010002 instance=ExtResource("savpill_inst")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TerminalContainer" type="PanelContainer" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=1642556444]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_onj4m")
+
+[node name="TerminalBt" type="Button" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/TerminalContainer" unique_id=26054358]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vlu6e")
+flat = true
+
+[node name="TerminalInfo" type="HBoxContainer" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/TerminalContainer" unique_id=742267508]
+unique_name_in_owner = true
+process_mode = 4
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InfoBt" type="Button" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/TerminalContainer/TerminalInfo" unique_id=2121055772]
+unique_name_in_owner = true
+process_mode = 4
+modulate = Color(0.23137255, 0.50980395, 0.9647059, 1)
+self_modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_tlngq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h1p8r")
+disabled = true
+text = "0"
+icon = ExtResource("38_onj4m")
+
+[node name="SuccessBt" type="Button" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/TerminalContainer/TerminalInfo" unique_id=558683972]
+unique_name_in_owner = true
+process_mode = 4
+modulate = Color(0.13333334, 0.77254903, 0.36862746, 1)
+self_modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_tlngq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h1p8r")
+disabled = true
+text = "0"
+icon = ExtResource("39_vlu6e")
+
+[node name="ErrorBt" type="Button" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox/TerminalContainer/TerminalInfo" unique_id=461419965]
+unique_name_in_owner = true
+process_mode = 4
+modulate = Color(0.9372549, 0.26666668, 0.26666668, 1)
+self_modulate = Color(1, 1, 1, 0.2)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_tlngq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h1p8r")
+disabled = true
+text = "0"
+icon = ExtResource("40_aqok7")
+
+[node name="VSeparatorTerminal" type="VSeparator" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000033]
+layout_mode = 2
+
+[node name="ZoomLabel" type="Label" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000016]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Zoom: 100%"
+
+[node name="ResetZoomBt" type="Button" parent="Content/UIBase/MainLayout/StatusBar/StatusHBox" unique_id=2000000039]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+tooltip_text = "Reset zoom to 100%"
+icon = ExtResource("55_focus")
+flat = true
+
+[node name="Tooltip" parent="Content/UIBase" unique_id=1420862732 instance=ExtResource("23_x5h56")]
+unique_name_in_owner = true
+visible = false
+z_index = 101
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 55.0
+
+[node name="ToastContainer" type="Control" parent="Content/UIBase" unique_id=1396520277]
+unique_name_in_owner = true
+z_index = 105
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("47_h1p8r")
+
+[node name="FlowViewer" parent="Content/UIBase/MainLayout/CenterRow/ContentArea/CanvasVBox/CanvasTabs" unique_id=2000000092 instance=ExtResource("60_flowvw")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Flow"
