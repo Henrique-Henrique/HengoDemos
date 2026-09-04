@@ -11,6 +11,17 @@ be used with [Godot Engine](https://godotengine.org), the open source
 
 All projects are developed entirely in [Hengo, a Visual Script](https://github.com/Henrique-Henrique/Hengo) designed for the Godot Engine.
 
+## Downloading a demo
+
+**[⬇ Releases page](https://github.com/Henrique-Henrique/HengoDemos/releases)**: each demo has its
+own zip there, with the Hengo addon already inside.
+
+- Download the zip of the demo you want.
+- Extract it, the folder inside holds the `project.godot`.
+- Import that folder in the Godot project manager and run it.
+
+Nothing else to do, `sync-addons.sh` is only for the clone below.
+
 ## Importing all demos
 
 To import all demos at once in the project manager:
